@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hi diddly ho</h1>
+{% extends "home/base.html" %}
+{% block content %}
+{% for drink in drinks %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ drink.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ drink.glassware }}</h6><h6 class="card-subtitle mb-2 text-muted">{{ drink.garnish }}</h6>
+          <p class="card-text">{{ drink.ingredients }}.</p>
+          
+        </div>
+      </div>
+
+{% endfor %}
+{% endblock %}
 </body>
+
 </html>
