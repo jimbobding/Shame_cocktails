@@ -2,14 +2,23 @@
 {% block content %}
 {% for drink in drinks %}
 
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title text-center">{{ drink.name }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ drink.glassware }}</h6><h6 class="card-subtitle mb-2 text-muted">{{ drink.garnish }}</h6>
-          <p class="card-text">{{ drink.ingredients }}.</p>
-          
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title text-center">{{ drink.name }}</h5>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h6 class="card-subtitle mb-2 text-muted">{{ drink.glassware }}</h6>
+            </div>
+            <div class="col">
+                <h6 class="card-subtitle mb-2 text-muted">{{ drink.garnish }}</h6>
+            </div>
         </div>
-      </div>
+        <p class="card-text">{{ drink.ingredients }}.</p>
+        <p class="card-text">{{ drink.date_posted|date:"F d. Y" }}.</p>
+
+    </div>
+</div>
 
 {% endfor %}
 {% endblock %}

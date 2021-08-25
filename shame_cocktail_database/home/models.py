@@ -8,8 +8,8 @@ class Drinks(models.Model):
     ingredients = models.TextField()
     method = models.TextField()
     glassware = models.CharField(max_length=100)
-    garnish = models.CharField(max_length=100)
-    notes = models.CharField(max_length=100)
+    garnish = models.CharField(max_length=100, blank=True)
+    notes = models.TextField(blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     
