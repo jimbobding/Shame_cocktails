@@ -16,6 +16,7 @@
         </div>
         <p class="card-text">{{ drink.ingredients }}.</p>
         <p class="card-text">{{ drink.date_posted|date:"F d. Y" }}.</p>
+        <img class="rounded-circle article-img" src="{{ drink.author.profile.image.url }}">
 
     </div>
 </div>
