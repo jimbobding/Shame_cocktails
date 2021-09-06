@@ -4,7 +4,7 @@
 
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title text-center">{{ drink.name }}</h5>
+        <h5 class="card-title text-center"><a href="{% url 'drinks-detail' drink.id %}">{{ drink.name }}</a></h5>
         <hr>
         <div class="row">
             <div class="col">
@@ -23,6 +23,3 @@
 
 {% endfor %}
 {% endblock %}
-</body>
-
-</html>
