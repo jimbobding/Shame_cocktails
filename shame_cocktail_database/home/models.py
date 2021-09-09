@@ -13,7 +13,7 @@ class Drinks(models.Model):
     notes = models.TextField(blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    
+  
     def __str__(self):
         return self.name
 

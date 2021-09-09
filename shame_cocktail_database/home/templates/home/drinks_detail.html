@@ -5,6 +5,10 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title text-center">{{ object.name }}</h5>
+        <div>
+            <a class="mr-2" href="{% url 'user-drinks' object.author.username %}">{{ drink.author }}</a>
+        </div>
+
         <hr>
         <div class="row">
             <div class="col">
@@ -14,7 +18,13 @@
                 <h6 class="card-subtitle mb-2 text-muted">{{ object.garnish }}</h6>
             </div>
         </div>
-        <p class="card-text">{{ object.ingredients }}.</p>
+        <p class="card-text">{{ object.ingredients }}.</p> 
+        {% if object.author == user %}
+        <div>
+          <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'drinks-update' object.id %}">Update</a>
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'drinks-delete' object.id %}">Delete</a>
+        </div>
+      {% endif %}
         <p class="card-text">{{ object.date_posted|date:"F d. Y" }}.</p>
        
         

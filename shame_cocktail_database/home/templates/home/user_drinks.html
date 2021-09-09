@@ -1,5 +1,7 @@
 {% extends "home/base.html" %}
 {% block content %}
+
+<h1 class="mb-3">Drinks by {{ view.kwargs.username }} ({{ page_obj.paginator.count }}) </h1>
 {% for drink in drinks %}
 
 <div class="card" style="width: 18rem;">
